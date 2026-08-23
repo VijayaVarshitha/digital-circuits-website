@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const OpenAI = require("openai");
@@ -9,6 +10,12 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+// Serve the frontend files
+app.use(express.static(path.join(__dirname, "..")));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "index.html"));
+});
 
 const openai = new OpenAI({
     apiKey: process.env.GEMINI_API_KEY,
