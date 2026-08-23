@@ -11,10 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // Serve the frontend files
-app.use(express.static(path.join(__dirname, "..")));
+// Serve the frontend files
+app.use(express.static(path.join(__dirname, "..", "Website DC")));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "Website DC", "index.html"));
 });
 
 const openai = new OpenAI({
