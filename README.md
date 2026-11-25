@@ -101,5 +101,4 @@ Boolean Logic Solver
 │   ├── package.json
 │   └── .env
 │
-├── .gitignore
 └── README.md
