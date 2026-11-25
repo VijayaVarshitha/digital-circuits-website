@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boolean Logic Solver</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+
+    <div class="logo">
+        Boolean Logic Solver
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+
+    </nav>
+
+</header>
+
+
+<main id="homepage">
+
+    <section class="hero">
+
+        <h1>
+            Boolean Logic
+            <br>
+            Made Simple.
+        </h1>
+
+        <p>
+            Solve digital logic problems with truth tables,
+            K-maps, Boolean expressions and logic circuits.
+        </p>
+
+    </section>
+
+    <section class="input-section">
+
+        <h2>Choose your input</h2>
+
+        <div class="input-options">
+
+            <button id="truthtablebutton">
+                Truth Table
+            </button>
+            <button id="mintermButton">
+                Minterms / Maxterms
+            </button>
+            <button id="booleanExpressionButton">
+    Boolean Expression
+</button>
+            <button id="kmapButton">
+                K-Map
+            </button>
+
+            <button id="binaryAdderButton">
+            Binary Adder
+        </button>
+        <button id="binarySubtractorButton">
+    Binary Subtractor
+</button>
+        </div>
+
+    </section>
+
+</main>
+<section id="truthTablePage">
+
+    <button id="backButton">
+        ← Back
+    </button>
+
+    <h1>Truth Table</h1>
+
+    <p>
+        Choose the number of input variables.
+    </p>
+
+
+    <div class="variable-selector">
+
+        <button id="decreaseVariables">
+            −
+        </button>
+
+        <span id="variableCount">
+            2
+        </span>
+
+        <button id="increaseVariables">
+            +
+        </button>
+
+    </div>
+    <p id="variableError"></p>
+
+    <button id="generateTable">
+        Generate Truth Table
+    </button>
+    <button id="clearTruthTable">
+    Clear
+</button>
+    <div id="tableContainer"></div>
+
+<div id="solveContainer"></div>
+
+<div id="truthTableResult"></div>
+<div id="kmapContainer"></div>
+<div id="simplificationContainer"></div>
+<div id="verificationContainer"></div>
+<div id="circuitContainer"></div>
+</section>
+<section id="mintermPage">
+
+    <button id="backFromMinterm">
+        ← Back
+    </button>
+
+    <h1>Minterms / Maxterms</h1>
+
+    <p>
+        Enter your Boolean function using minterms or maxterms.
+    </p>
+
+    <div class="variable-selector">
+
+        <button id="decreaseMintermVariables">
+            −
+        </button>
+
+        <span id="mintermVariableCount">
+            2
+        </span>
+
+        <button id="increaseMintermVariables">
+            +
+        </button>
+
+    </div>
+
+    <p id="mintermVariableError"></p>
+
+
+    <div class="function-type">
+
+        <label>
+            <input
+                type="radio"
+                name="functionType"
+                value="minterms"
+                checked
+            >
+
+            Minterms
+        </label>
+
+
+        <label>
+            <input
+                type="radio"
+                name="functionType"
+                value="maxterms"
+            >
+
+            Maxterms
+        </label>
+
+    </div>
+
+
+    <div class="minterm-input">
+
+        <label for="mintermInput">
+            Enter values:
+        </label>
+
+        <input
+            type="text"
+            id="mintermInput"
+            placeholder="Example: 1, 3, 5, 7"
+        >
+
+    </div>
+
+
+    <p id="mintermInputError"></p>
+
+
+    <button id="solveMinterm">
+        Solve
+    </button>
+
+
+    <div id="mintermResult"></div>
+
+</section>
+<section id="booleanExpressionPage">
+
+    <button id="backFromBooleanExpression">
+        ← Back
+    </button>
+
+    <h1>Boolean Expression</h1>
+
+    <p>
+        Enter a Boolean expression and generate its truth table.
+    </p>
+
+    <div class="expression-input-box">
+
+        <label for="booleanExpressionInput">
+            Boolean Expression
+        </label>
+
+        <input
+            type="text"
+            id="booleanExpressionInput"
+            placeholder="Example: A'B + AC"
+        >
+
+        <p class="expression-help">
+            Use <strong>+</strong> for OR,
+            adjacent variables for AND,
+            and <strong>'</strong> for NOT.
+        </p>
+
+        <p id="booleanExpressionError"></p>
+
+        <button id="generateExpressionTable">
+            Generate Truth Table
+        </button>
+
+    </div>
+
+    <div id="expressionTruthTableContainer"></div>
+
+    <div id="expressionSolveContainer"></div>
+
+    <div id="expressionKmapContainer"></div>
+
+    <div id="expressionSimplificationContainer"></div>
+
+    <div id="expressionVerificationContainer"></div>
+
+    <div id="expressionCircuitContainer"></div>
+
+</section>
+<section id="kmapPage">
+
+    <button id="backFromKMap">
+        ← Back
+    </button>
+
+    <h1>K-Map</h1>
+
+    <p>
+        Choose the number of input variables.
+    </p>
+
+    <div class="variable-selector">
+
+        <button id="decreaseKMapVariables">
+            −
+        </button>
+
+        <span id="kmapVariableCount">
+            2
+        </span>
+
+        <button id="increaseKMapVariables">
+            +
+        </button>
+
+    </div>
+
+    <p id="kmapVariableError"></p>
+
+    <button id="generateKMapInput">
+        Generate K-Map
+    </button>
+
+    <div id="kmapInputContainer"></div>
+
+<div id="kmapSimplificationContainer"></div>
+
+<div id="kmapCircuitContainer"></div>
+<div id="kmapVerificationContainer"></div>
+
+
+</section>
+
+<section id="binaryAdderPage">
+
+    <button id="backFromBinaryAdder">
+        ← Back
+    </button>
+
+    <h1>Binary Adder</h1>
+
+    <p>
+        Add two binary numbers from 1 to 4 bits.
+    </p>
+
+    <!-- BIT SELECTOR -->
+    <div class="variable-selector">
+
+        <button id="decreaseAdderBits">
+            −
+        </button>
+
+        <span id="adderBitCount">
+            1
+        </span>
+
+        <button id="increaseAdderBits">
+            +
+        </button>
+
+    </div>
+
+    <p id="adderBitError"></p>
+
+
+    <!-- INPUTS -->
+    <div id="adderInputContainer"></div>
+
+
+    <!-- RESULT -->
+    <div id="adderResultContainer"></div>
+
+
+    <!-- CIRCUIT OPTIONS -->
+    <div class="adder-circuit-options">
+
+        <button
+            id="adderStandardCircuitButton"
+            class="active"
+            type="button"
+        >
+            Standard Gates
+        </button>
+
+        <button
+            id="adderNandCircuitButton"
+            type="button"
+        >
+            NAND Only
+        </button>
+
+        <button
+            id="adderNorCircuitButton"
+            type="button"
+        >
+            NOR Only
+        </button>
+
+    </div>
+
+
+    <!-- STANDARD / BLOCK CIRCUIT -->
+    <div id="adderCircuitContainer"></div>
+
+<div id="adderGateCircuitContainer"></div>
+
+
+    <!-- NAND / NOR CIRCUIT -->
+    <div id="adderAlternativeCircuitContainer"></div>
+
+</section>
+<section id="binarySubtractorPage">
+
+    <button id="backFromBinarySubtractor">
+        ← Back
+    </button>
+
+    <h1>Binary Subtractor</h1>
+
+    <p>
+        Subtract two binary numbers from 1 to 4 bits.
+    </p>
+
+    <!-- BIT SELECTOR -->
+    <div class="variable-selector">
+
+        <button id="decreaseSubtractorBits">
+            −
+        </button>
+
+        <span id="subtractorBitCount">
+            1
+        </span>
+
+        <button id="increaseSubtractorBits">
+            +
+        </button>
+
+    </div>
+
+    <p id="subtractorBitError"></p>
+
+
+    <!-- INPUTS -->
+    <div id="subtractorInputContainer"></div>
+
+
+    <!-- RESULT -->
+    <div id="subtractorResultContainer"></div>
+
+
+    <!-- =================================================
+         CIRCUIT OPTIONS
+         ================================================= -->
+
+    <div class="subtractor-circuit-options">
+
+        <button
+            id="subtractorStandardCircuitButton"
+            class="active"
+            type="button"
+        >
+            Standard Gates
+        </button>
+
+        <button
+            id="subtractorNandCircuitButton"
+            type="button"
+        >
+            NAND Only
+        </button>
+
+        <button
+            id="subtractorNorCircuitButton"
+            type="button"
+        >
+            NOR Only
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         STANDARD CIRCUIT
+         ================================================= -->
+
+    <div id="subtractorBlockCircuitContainer"></div>
+
+    <div id="subtractorGateCircuitContainer"></div>
+
+
+    <!-- =================================================
+         NAND / NOR CIRCUIT
+         ================================================= -->
+
+    <div id="subtractorAlternativeCircuitContainer"></div>
+
+</section>
+        <script src="script.js"></script>
+    </body>
+</html>
+

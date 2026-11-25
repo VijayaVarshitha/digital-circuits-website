@@ -1,0 +1,3234 @@
+/* =========================================================
+   BOOLEAN LOGIC SOLVER — FINAL DARK TECH THEME
+   Cleaned and consolidated CSS
+   ========================================================= */
+
+:root {
+    --primary: #7c6cff;
+    --primary-dark: #6557e8;
+    --primary-light: #17152e;
+    --accent: #b06cff;
+
+    --bg: #070a12;
+    --surface: #0d111b;
+    --surface-soft: #111725;
+    --surface-hover: #151d2e;
+
+    --text: #edf2ff;
+    --text-secondary: #9aa6bd;
+    --text-muted: #657089;
+
+    --border: #20283a;
+    --border-dark: #303a50;
+
+    --success: #35e39a;
+    --success-bg: #0b211b;
+    --danger: #ff5571;
+    --danger-bg: #260f17;
+
+    --shadow-sm: 0 4px 18px rgba(0, 0, 0, .20);
+    --shadow-md: 0 12px 38px rgba(0, 0, 0, .28);
+    --shadow-lg: 0 24px 70px rgba(0, 0, 0, .38);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+}
+
+/* =========================================================
+   RESET / GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 50% -10%, rgba(124, 108, 255, .16), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(176, 108, 255, .07), transparent 25%),
+        linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+    background-size: auto, auto, 42px 42px, 42px 42px;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        transparent 49.95%,
+        rgba(124, 108, 255, .025) 50%,
+        transparent 50.05%
+    );
+    z-index: -1;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+strong {
+    color: #e9edfa;
+}
+
+::selection {
+    background: rgba(124, 108, 255, .35);
+    color: white;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background: rgba(7, 10, 18, .82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid #1c2435;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #f5f7ff;
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -.4px;
+}
+
+.logo::before {
+    content: "◈";
+    color: #8b7dff;
+    margin-right: 9px;
+    font-size: 16px;
+    text-shadow: 0 0 16px rgba(124, 108, 255, .75);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #8d99b0;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 10px;
+    transition: width .2s ease;
+}
+
+nav a:hover {
+    color: #b7afff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   MAIN / HERO
+   ========================================================= */
+
+main {
+    max-width: 1180px;
+    margin: auto;
+    padding: 86px 30px 100px;
+}
+
+.hero {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0 0 24px;
+    font-size: clamp(48px, 7vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -3.5px;
+    font-weight: 800;
+    color: #f3f6ff;
+    text-shadow: 0 0 35px rgba(124, 108, 255, .08);
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 5px;
+    margin: 25px auto 0;
+    background: linear-gradient(90deg, #6f63ff, #c06cff);
+    border-radius: 99px;
+    box-shadow: 0 0 18px rgba(124, 108, 255, .55);
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #8f9bb2;
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+/* =========================================================
+   INPUT SECTION
+   ========================================================= */
+
+.input-section {
+    margin-top: 88px;
+    text-align: center;
+}
+
+.input-section h2 {
+    margin: 0 0 34px;
+    color: #f3f6ff;
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -.8px;
+}
+
+
+.input-options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1120px;
+    margin: auto;
+}
+
+.input-options button {
+    min-height: 112px;
+    padding: 24px 18px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0e131f, #0a0e17);
+    color: #edf2ff;
+    border: 1px solid #232c40;
+    border-radius: var(--radius-lg);
+    box-shadow: inset 0 1px rgba(255, 255, 255, .025),
+        0 12px 35px rgba(0, 0, 0, .25);
+    font-size: 16px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: transform .22s ease, border-color .22s ease,
+        box-shadow .22s ease, background .22s ease;
+}
+
+#kmapButton {
+    grid-column: 2 / 4;
+    justify-self: center;
+    width: calc(50% - 10px);
+}
+
+.input-options button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+.input-options button:hover {
+    transform: translateY(-5px);
+    border-color: #5c51cf;
+    background: linear-gradient(145deg, #12182a, #0d1220);
+    box-shadow: 0 16px 42px rgba(77, 65, 190, .18),
+        inset 0 1px rgba(255, 255, 255, .04);
+}
+
+.input-options button:hover::before {
+    transform: scaleX(1);
+}
+
+/* =========================================================
+   PAGE SECTIONS
+   ========================================================= */
+
+#truthTablePage,
+#mintermPage,
+#booleanExpressionPage,
+#kmapPage {
+    display: none;
+    max-width: 1180px;
+    margin: auto;
+    padding: 55px 30px 90px;
+}
+
+#truthTablePage > h1,
+#mintermPage > h1,
+#booleanExpressionPage>h1,
+#kmapPage > h1 {
+    margin: 42px 0 10px;
+    font-size: clamp(38px, 5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    font-weight: 800;
+    color: #f3f6ff;
+}
+
+#truthTablePage > p,
+#mintermPage > p,
+#booleanExpression > p,
+#kmapPage > p {
+    color: #8f9bb2;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+#backButton,
+#backFromMinterm,
+#backFromKMap,
+#backFromBooleanExpression,
+#backabout,
+#clearTruthTable {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    background: #0d121d;
+    color: #a7b1c7;
+    border: 1px solid #252e41;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: color .2s ease, border-color .2s ease,
+        background .2s ease;
+}
+
+#backButton:hover,
+#backFromMinterm:hover,
+#backFromBooleanExpression:hover,
+#backabout:hover,
+#backFromKMap:hover {
+    color: #b8b0ff;
+    border-color: #554bd0;
+    background: #15142c;
+}
+
+#clearTruthTable {
+    margin-left: 8px;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#clearTruthTable:hover {
+    background: var(--danger-bg);
+    border-color: #713044;
+    color: #ff7187;
+}
+
+/* =========================================================
+   VARIABLE SELECTOR
+   ========================================================= */
+
+.variable-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 34px 0;
+}
+
+.variable-selector button {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #3b356f;
+    border-radius: 11px;
+    background: #15142c;
+    color: #a79dff;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease,
+        color .18s ease, box-shadow .18s ease;
+}
+
+.variable-selector button:hover {
+    background: #7568ff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(117, 104, 255, .28);
+}
+
+#variableCount,
+#mintermVariableCount,
+#kmapVariableCount {
+    min-width: 48px;
+    color: #f3f6ff;
+    font-size: 28px;
+    font-weight: 750;
+    text-align: center;
+}
+
+/* =========================================================
+   PRIMARY BUTTONS
+   ========================================================= */
+
+#generateTable,
+#solveTruthTable,
+#solveMinterm,
+#generateKMapInput,
+#solveKMapButton {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6659ee, #9b5cff);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 26px rgba(112, 91, 245, .28);
+    transition: transform .2s ease, box-shadow .2s ease,
+        filter .2s ease;
+}
+
+#generateTable:hover,
+#solveTruthTable:hover,
+#solveMinterm:hover,
+#generateKMapInput:hover,
+#solveKMapButton:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 12px 34px rgba(112, 91, 245, .40);
+}
+
+#solveTruthTable,
+#solveMinterm,
+#solveKMapButton {
+    display: block;
+    margin: 30px auto;
+}
+
+/* =========================================================
+   ERRORS
+   ========================================================= */
+
+#variableError,
+#mintermInputError,
+#mintermVariableError,
+#kmapVariableError {
+    color: var(--danger);
+    font-size: 14px;
+    min-height: 20px;
+    margin-top: 10px;
+}
+
+/* =========================================================
+   TRUTH TABLE
+   ========================================================= */
+
+#tableContainer {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.truth-table-instruction {
+    margin: 0 0 18px;
+    color: #8f9bb2;
+    font-size: 15px;
+}
+
+.truth-table-instruction strong {
+    color: var(--primary);
+    font-weight: 750;
+}
+
+#tableContainer table {
+    width: min(100%, 850px);
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    background: #0c111b;
+    border: 1px solid #222b3e;
+    border-radius: 14px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .25);
+}
+
+#tableContainer th,
+#tableContainer td {
+    padding: 14px 24px;
+    text-align: center;
+    border-right: 1px solid #222b3e;
+    border-bottom: 1px solid #222b3e;
+}
+
+#tableContainer th:last-child,
+#tableContainer td:last-child {
+    border-right: none;
+}
+
+#tableContainer tr:last-child td {
+    border-bottom: none;
+}
+
+#tableContainer th {
+    background: linear-gradient(180deg, #181633, #121329);
+    color: #b6aeff;
+    font-size: 14px;
+    font-weight: 750;
+    letter-spacing: .3px;
+}
+
+#tableContainer td {
+    background: #0d121d;
+    color: #e8edfa;
+    font-size: 16px;
+}
+
+#tableContainer tbody tr {
+    transition: background .15s ease;
+}
+
+#tableContainer tbody tr:hover td {
+    background: #111827;
+}
+
+/* =========================================================
+   TRUTH OUTPUT TOGGLE
+   ========================================================= */
+
+.truth-output {
+    width: 48px;
+    height: 38px;
+    border: 1px solid #303a50;
+    border-radius: 8px;
+    background: #111725;
+    color: #e7ecfa;
+    font-size: 17px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: transform .15s ease, border-color .15s ease,
+        background .15s ease, color .15s ease;
+}
+
+.truth-output:hover {
+    transform: scale(1.05);
+    background: #1a1737;
+    border-color: #655ae3;
+    color: #c0b9ff;
+    box-shadow: 0 0 18px rgba(124, 108, 255, .15);
+}
+
+/* =========================================================
+   K-MAP
+   ========================================================= */
+
+#kmapContainer {
+    margin-top: 55px;
+    text-align: center;
+}
+
+#kmapContainer h2 {
+    margin-bottom: 24px;
+    color: #f3f6ff;
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -.5px;
+}
+
+.kmap,
+.input-kmap {
+    margin: 22px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #0c111b;
+    border: 1px solid #30384d;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .25);
+}
+
+.kmap th,
+.kmap td {
+    width: 62px;
+    height: 62px;
+    padding: 10px;
+    border-right: 1px solid #293348;
+    border-bottom: 1px solid #293348;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.kmap tr:last-child td,
+.kmap tr:last-child th {
+    border-bottom: none;
+}
+
+.kmap th:last-child,
+.kmap td:last-child {
+    border-right: none;
+}
+
+.kmap th,
+.input-kmap th {
+    background: #141a29;
+    color: #aeb7cb;
+    border-color: #293348;
+    font-weight: 750;
+}
+
+.kmap td,
+.input-kmap td {
+    background: #0c111b;
+    color: #edf2ff;
+    border-color: #293348;
+    font-weight: 700;
+}
+
+/* K-map group highlighting */
+
+.kmap td.group-1 {
+    background: rgba(80, 120, 255, .20);
+}
+
+.kmap td.group-2 {
+    background: rgba(53, 227, 154, .16);
+}
+
+.kmap td.group-3 {
+    background: rgba(255, 190, 70, .16);
+}
+
+.kmap td.group-4 {
+    background: rgba(235, 90, 180, .16);
+}
+
+/* =========================================================
+   RESULT / EXPRESSION / DERIVATION
+   ========================================================= */
+
+.result-box {
+    width: min(90%, 760px);
+    margin: 35px auto;
+    padding: 30px;
+    background: #0c111b;
+    border: 1px solid #222b3e;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.result-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.result-box h2 {
+    margin: 0 0 18px;
+    color: #f0f3ff;
+    font-size: 25px;
+}
+
+.result-box p {
+    margin: 10px 0;
+    color: #a4aec2;
+    font-size: 16px;
+}
+
+.result-box strong {
+    color: var(--primary);
+}
+
+.expression {
+    margin: 22px 0;
+    padding: 19px 22px;
+    background: #111627;
+    color: #eeeaff;
+    border: 1px solid #252d42;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Cambria Math", "Times New Roman", serif;
+    box-shadow: inset 0 1px rgba(255, 255, 255, .025);
+}
+
+.derivation-group {
+    margin: 20px 0;
+    padding: 22px;
+    background: #0d121d;
+    border: 1px solid #222b3e;
+    border-radius: 14px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+}
+
+.derivation-group h3 {
+    margin: 0 0 12px;
+    color: #f0f3ff;
+    text-align: center;
+    font-size: 18px;
+}
+
+.derivation-group p {
+    margin: 9px 0;
+    color: #a4aec2;
+    font-size: 15px;
+}
+
+/* =========================================================
+   K-MAP SOLUTION TRUTH TABLE
+   ========================================================= */
+
+.kmap-result-truth-table {
+    width: min(100%, 850px);
+    margin: 25px auto !important;
+    border-collapse: collapse !important;
+    background: #0c111b !important;
+    border: 1px solid #30384d !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.kmap-result-truth-table th {
+    padding: 14px 22px !important;
+    background: #5146e5 !important;
+    color: #ffffff !important;
+    border: 1px solid #30384d !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.kmap-result-truth-table td {
+    padding: 14px 22px !important;
+    background: #111827 !important;
+    color: #f1f5ff !important;
+    border: 1px solid #30384d !important;
+    text-align: center !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.kmap-result-truth-table td.truth-zero {
+    background: #111827 !important;
+    color: #94a3b8 !important;
+}
+
+.kmap-result-truth-table td.truth-one {
+    background: #0d2921 !important;
+    color: #4cf0aa !important;
+    font-weight: 800;
+}
+
+.kmap-result-truth-table td.truth-x {
+    background: #241d3d !important;
+    color: #b8aaff !important;
+    font-weight: 800;
+}
+
+.kmap-result-truth-table tbody tr:hover td {
+    background: #1a2235 !important;
+}
+
+/* =========================================================
+   MINTERM PAGE
+   ========================================================= */
+
+.function-type {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin: 30px 0;
+    color: #cfd6e7;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.function-type label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.function-type input {
+    accent-color: var(--primary);
+}
+
+.minterm-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    color: #cfd6e7;
+}
+
+.minterm-input label {
+    color: #9aa6bd;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#mintermInput {
+    width: min(400px, 90%);
+    padding: 13px 15px;
+    background: #0c111b;
+    color: #edf2ff;
+    border: 1px solid #283247;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+#mintermInput::placeholder {
+    color: #59657d;
+}
+
+#mintermInput:focus {
+    border-color: #6559e8;
+    box-shadow: 0 0 0 3px rgba(101, 89, 232, .14);
+}
+
+/* =========================================================
+   K-MAP INPUT PAGE
+   ========================================================= */
+
+#kmapPage {
+    text-align: center;
+}
+
+#kmapInputContainer {
+    margin-top: 40px;
+}
+
+.kmap-instruction {
+    margin: 15px 0;
+    color: #8f9bb2;
+}
+
+.kmap-instruction strong {
+    color: var(--primary);
+}
+
+.kmap-legend {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.kmap-legend span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 34px;
+    border-radius: 8px;
+    font-weight: 750;
+    border: 1px solid transparent;
+    box-shadow: inset 0 1px rgba(255, 255, 255, .03);
+}
+
+.legend-zero,
+.kmap-zero {
+    background: #111725;
+    color: #8f9bb1;
+    border-color: #2a3448;
+}
+
+.legend-one,
+.kmap-one {
+    background: #0d2921;
+    color: #4cf0aa;
+    border-color: #1d624a;
+}
+
+.legend-x,
+.kmap-x {
+    background: #17152f;
+    color: #b5aaff;
+    border-color: #443a83;
+}
+
+.kmap-input-cell {
+    cursor: pointer !important;
+    font-size: 22px;
+    font-weight: 750;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.kmap-input-cell:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 2px #7c6cff inset,
+        0 0 20px rgba(124, 108, 255, .16);
+}
+
+.kmap-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.kmap-section {
+    text-align: center;
+}
+
+.kmap-section h3 {
+    margin: 0 0 14px;
+    color: #f3f6ff;
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.input-kmap td {
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.input-kmap th {
+    min-width: 60px;
+}
+
+/* =========================================================
+   CIRCUIT SECTION
+   ========================================================= */
+
+#circuitContainer {
+    width: 96%;
+    max-width: 1300px;
+    margin: 65px auto;
+    text-align: center;
+}
+
+.circuit-box {
+    margin-top: 25px;
+    padding: 30px;
+    background: #0a0f18;
+    border: 1px solid #222b3e;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+}
+
+.circuit-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.circuit-buttons button {
+    padding: 11px 21px;
+    background: #0d121d;
+    color: #aab4c8;
+    border: 1px solid #273146;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color .2s ease, background .2s ease,
+        border-color .2s ease, transform .2s ease;
+}
+
+.circuit-buttons button:hover {
+    background: #15152b;
+    color: #c0b9ff;
+    border-color: #5b51d5;
+    transform: translateY(-1px);
+}
+
+.circuit-buttons button.active {
+    background: linear-gradient(135deg, #6659ee, #9359f3);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 0 24px rgba(116, 92, 242, .28);
+}
+
+.circuit-diagram {
+    width: 100%;
+    margin: 28px auto;
+    padding: 24px;
+    background-color: #080d15;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(124, 108, 255, .05), transparent 60%);
+    background-size: 24px 24px, 24px 24px, auto;
+    border: 1px solid #202a3d;
+    border-radius: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+.circuit-svg {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    background: transparent;
+    filter: drop-shadow(0 0 7px rgba(124, 108, 255, .04));
+}
+
+.circuit-wire {
+    stroke: #8390aa;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+.circuit-label,
+.circuit-output {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    fill: #e9edfa;
+}
+
+.circuit-label {
+    font-size: 20px;
+}
+
+.circuit-output {
+    font-size: 22px;
+}
+
+.and-gate,
+.or-gate,
+.not-gate,
+.nand-gate,
+.nor-gate {
+    fill: #0e1521;
+    stroke: #9da8c2;
+    stroke-width: 2.5;
+}
+
+.gate-bubble {
+    fill: #0e1521;
+    stroke: #b6bddd;
+    stroke-width: 2.5;
+}
+
+.gate-name {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    fill: #dce3f3;
+    text-anchor: middle;
+}
+
+/* =========================================================
+   VERIFICATION
+   ========================================================= */
+
+#verificationContainer {
+    width: 95%;
+    max-width: 900px;
+    margin: 55px auto;
+}
+
+.verification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    margin: 12px 0;
+    background: #0d121d;
+    border: 1px solid #222b3e;
+    border-radius: 13px;
+    color: #d8deec;
+    font-size: 16px;
+    box-shadow: 0 7px 24px rgba(0, 0, 0, .16);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.verification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.verification-item strong {
+    white-space: nowrap;
+}
+
+.verification-item.success {
+    border-left: 4px solid #35e39a;
+    background: linear-gradient(90deg, rgba(53, 227, 154, .07), #0d121d 28%);
+}
+
+.verification-item.success strong {
+    color: #45eaa7;
+}
+
+.verification-item.error {
+    border-left: 4px solid #ff5571;
+    background: linear-gradient(90deg, rgba(255, 85, 113, .07), #0d121d 28%);
+}
+
+.verification-item.error strong {
+    color: #ff6b82;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    header {
+        padding: 0 25px;
+    }
+
+    main {
+        padding-top: 65px;
+    }
+
+    .input-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero h1 {
+        letter-spacing: -2.5px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: auto, auto, 28px 28px, 28px 28px;
+    }
+
+    header {
+        height: 65px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    main {
+        padding: 50px 18px 70px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .input-section {
+        margin-top: 60px;
+    }
+
+    .input-section h2 {
+        font-size: 25px;
+    }
+
+    .input-options {
+        grid-template-columns: 1fr;
+    }
+
+    .input-options button {
+        min-height: 90px;
+    }
+
+    #truthTablePage,
+    #mintermPage,
+    #kmapPage {
+        padding: 35px 18px 70px;
+    }
+
+    #truthTablePage > h1,
+    #mintermPage > h1,
+    #kmapPage > h1 {
+        font-size: 40px;
+    }
+
+    #tableContainer {
+        overflow-x: auto;
+        align-items: stretch;
+    }
+
+    #tableContainer table,
+    .kmap-result-truth-table {
+        min-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .kmap {
+        font-size: 15px;
+    }
+
+    .kmap th,
+    .kmap td {
+        width: 52px;
+        height: 52px;
+    }
+
+    .verification-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .circuit-box {
+        padding: 18px;
+    }
+
+    .circuit-diagram {
+        padding: 12px;
+    }
+}
+
+/* =========================================================
+   BOOLEAN EXPRESSION PAGE
+   ========================================================= */
+
+#booleanExpressionPage {
+    text-align: center;
+}
+
+
+/* Expression input box */
+
+.expression-input-box {
+    width: min(700px, 95%);
+
+    margin: 45px auto;
+
+    padding: 30px;
+
+    background: #0c111b;
+
+    border: 1px solid #222b3e;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-md);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Top tech line */
+
+.expression-input-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--accent)
+        );
+}
+
+
+/* Label */
+
+.expression-input-box label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #c7cee0;
+
+    font-size: 15px;
+
+    font-weight: 650;
+}
+
+
+/* Expression input */
+
+#booleanExpressionInput {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    background: #0a0f18;
+
+    color: #edf2ff;
+
+    border: 1px solid #283247;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family:
+        "Cambria Math",
+        "Times New Roman",
+        serif;
+
+    font-size: 20px;
+
+    text-align: center;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+#booleanExpressionInput::placeholder {
+    color: #59657d;
+
+    font-size: 17px;
+}
+
+
+#booleanExpressionInput:hover {
+    border-color: #414d68;
+}
+
+
+#booleanExpressionInput:focus {
+    background: #0e1421;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(124, 108, 255, .12),
+        0 10px 30px rgba(0, 0, 0, .2);
+}
+
+
+/* Help text */
+
+.expression-help {
+    margin: 14px 0 5px;
+
+    color: #68758d;
+
+    font-size: 13px;
+}
+
+
+.expression-help strong {
+    color: #a79fff;
+}
+
+
+/* Error */
+
+#booleanExpressionError {
+    min-height: 20px;
+
+    margin: 10px 0;
+
+    color: var(--danger);
+
+    font-size: 14px;
+}
+
+
+/* Generate button */
+
+#generateExpressionTable {
+    margin-top: 15px;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6659ee,
+            #9b5cff
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 26px rgba(112, 91, 245, .28);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
+}
+
+
+#generateExpressionTable:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.05);
+
+    box-shadow:
+        0 12px 34px rgba(112, 91, 245, .40);
+}
+
+
+/* =========================================================
+   BOOLEAN EXPRESSION TRUTH TABLE
+   ========================================================= */
+
+#expressionTruthTableContainer {
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+#expressionTruthTableContainer h2 {
+    color: #f3f6ff;
+
+    font-size: 28px;
+
+    margin-bottom: 22px;
+}
+
+
+.expression-truth-table {
+    width: min(100%, 850px);
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    background: #0c111b;
+
+    border: 1px solid #222b3e;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, .25);
+}
+
+
+.expression-truth-table th,
+.expression-truth-table td {
+    padding: 14px 24px;
+
+    text-align: center;
+
+    border-right: 1px solid #222b3e;
+
+    border-bottom: 1px solid #222b3e;
+}
+
+
+.expression-truth-table th:last-child,
+.expression-truth-table td:last-child {
+    border-right: none;
+}
+
+
+.expression-truth-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+.expression-truth-table th {
+    background:
+        linear-gradient(
+            180deg,
+            #181633,
+            #121329
+        );
+
+    color: #b6aeff;
+
+    font-size: 14px;
+
+    font-weight: 750;
+}
+
+
+.expression-truth-table td {
+    background: #0d121d;
+
+    color: #e8edfa;
+
+    font-size: 16px;
+}
+
+
+.expression-truth-table tbody tr:hover td {
+    background: #111827;
+}
+
+
+/* Truth-table output */
+
+.expression-truth-table .truth-one {
+    color: #4cf0aa;
+
+    font-weight: 800;
+}
+
+
+.expression-truth-table .truth-zero {
+    color: #8f9bb1;
+}
+
+
+/* =========================================================
+   BOOLEAN EXPRESSION K-MAP
+   ========================================================= */
+
+#expressionKmapContainer {
+    margin-top: 55px;
+
+    text-align: center;
+}
+
+
+#expressionKmapContainer h2 {
+    margin-bottom: 24px;
+
+    color: #f3f6ff;
+
+    font-size: 28px;
+
+    font-weight: 750;
+}
+
+/* =========================================
+   MOBILE / PHONE VERSION
+   ========================================= */
+
+   @media (max-width: 768px) {
+
+    .input-options {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .input-options button {
+        width: 100% !important;
+        min-height: 110px;
+        margin: 0 !important;
+    }
+
+    #kmapButton {
+        width: 100% !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        justify-self: auto !important;
+        margin: 0 !important;
+    }
+}
+
+/* ============================================================
+   MINTERM VERIFICATION
+   ============================================================ */
+
+.verification-section {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.verification-section h2 {
+    margin-bottom: 28px;
+}
+
+
+.verification-card {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 16px auto;
+    padding: 28px 24px;
+
+    border: 1px solid #293149;
+    border-left: 5px solid #28e6a5;
+
+    border-radius: 16px;
+
+    background: rgba(14, 19, 32, 0.8);
+
+    box-sizing: border-box;
+}
+
+
+.verification-card p {
+    margin: 0 auto 22px;
+
+    font-size: 20px;
+    line-height: 1.5;
+
+    color: #cdd4e5;
+}
+
+
+.verification-success {
+    display: block;
+
+    font-size: 20px;
+
+    color: #28e6a5;
+}
+
+
+.verification-fail {
+    display: block;
+
+    font-size: 20px;
+
+    color: #ff5c7a;
+}
+
+/* =========================================================
+   BINARY ADDER
+   ========================================================= */
+
+.adder-input-box,
+.adder-result-box,
+.adder-circuit-box {
+
+    width:
+        min(850px, 95%);
+
+    margin:
+        40px auto;
+
+    padding:
+        30px;
+
+    background:
+        #120d1c;
+
+    border:
+        1px solid #392951;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 12px 38px
+        rgba(0,0,0,.3);
+}
+
+.adder-input-box {
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+.adder-input-box::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6d28d9,
+            #a78bfa
+        );
+}
+
+.adder-row {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin:
+        22px 0;
+
+    flex-wrap:
+        wrap;
+}
+
+.adder-row-label {
+
+    width:
+        70px;
+
+    color:
+        #d6cae3;
+
+    font-size:
+        20px;
+
+    font-weight:
+        750;
+
+    text-align:
+        right;
+}
+
+.adder-bit {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #191226;
+
+    color:
+        #a99bbd;
+
+    border:
+        1px solid #513a70;
+
+    border-radius:
+        10px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        750;
+
+    cursor:
+        pointer;
+
+    transition:
+        all .18s ease;
+}
+
+.adder-bit:hover {
+
+    border-color:
+        #8b5cf6;
+
+    color:
+        #c4a9ff;
+
+    transform:
+        translateY(-2px);
+}
+
+.adder-bit.active {
+
+    background:
+        #2d1a4b;
+
+    color:
+        #bda3ff;
+
+    border-color:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 18px
+        rgba(139,92,246,.2);
+}
+
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+#calculateAdder {
+
+    margin-top:
+        20px;
+
+    padding:
+        13px 28px;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d28d9,
+            #8b5cf6
+        );
+
+    color:
+        white;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 8px 26px
+        rgba(109,40,217,.3);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+#calculateAdder:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 34px
+        rgba(139,92,246,.42);
+}
+
+
+/* =========================================================
+   ADDER RESULT
+   ========================================================= */
+
+.adder-result-number {
+
+    margin:
+        18px 0;
+
+    padding:
+        18px;
+
+    background:
+        #241735;
+
+    border:
+        1px solid #513a70;
+
+    border-radius:
+        12px;
+
+    font-family:
+        "Cambria Math",
+        monospace;
+
+    font-size:
+        25px;
+
+    font-weight:
+        750;
+
+    color:
+        #bda3ff;
+}
+
+.adder-result-details {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        25px;
+
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        22px;
+}
+
+.adder-result-detail {
+
+    min-width:
+        150px;
+
+    padding:
+        15px;
+
+    background:
+        #191226;
+
+    border:
+        1px solid #392951;
+
+    border-radius:
+        10px;
+}
+
+.adder-result-detail span {
+
+    display:
+        block;
+
+    color:
+        #887a9d;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        5px;
+}
+
+.adder-result-detail strong {
+
+    color:
+        #eee5ff;
+
+    font-size:
+        20px;
+}
+
+
+/* =========================================================
+   ADDER CIRCUIT
+   ========================================================= */
+
+.adder-circuit-box {
+
+    width:
+        min(1150px, 98%);
+
+    margin:
+        50px auto;
+
+    padding:
+        30px;
+}
+
+.adder-circuit-diagram {
+
+    padding:
+        25px;
+
+    overflow-x:
+        auto;
+
+    background-color:
+        #0b0810;
+
+    border:
+        1px solid #392951;
+
+    border-radius:
+        14px;
+}
+
+.adder-circuit-svg {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    min-width:
+        850px;
+
+    height:
+        auto;
+
+    margin:
+        auto;
+}
+
+.adder-wire {
+
+    fill:
+        none;
+
+    stroke:
+        #9b7bd4;
+
+    stroke-width:
+        3;
+
+    stroke-linecap:
+        round;
+}
+
+.adder-fa {
+
+    fill:
+        #191226;
+
+    stroke:
+        #8b5cf6;
+
+    stroke-width:
+        3;
+}
+
+.adder-fa-text {
+
+    fill:
+        #eee5ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        16px;
+
+    font-weight:
+        700;
+
+    text-anchor:
+        middle;
+
+    dominant-baseline:
+        middle;
+}
+
+.adder-bit-label {
+
+    fill:
+        #bda3ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        17px;
+
+    font-weight:
+        700;
+
+    text-anchor:
+        middle;
+
+    dominant-baseline:
+        middle;
+}
+
+.adder-output-label {
+
+    fill:
+        #c4a9ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        18px;
+
+    font-weight:
+        750;
+
+    text-anchor:
+        middle;
+
+    dominant-baseline:
+        middle;
+}
+
+.adder-carry-label {
+
+    fill:
+        #d6b7ff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    text-anchor:
+        middle;
+
+    dominant-baseline:
+        middle;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding:
+            0 25px;
+    }
+
+    .input-options {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .input-options {
+
+        display:
+            flex !important;
+
+        flex-direction:
+            column !important;
+
+        align-items:
+            center !important;
+
+        gap:
+            20px;
+
+        width:
+            90%;
+
+        max-width:
+            600px;
+
+        margin:
+            auto;
+    }
+
+    .input-options button {
+
+        width:
+            100% !important;
+
+        min-height:
+            110px;
+
+        margin:
+            0 !important;
+    }
+
+    #kmapButton {
+
+        width:
+            100% !important;
+
+        margin:
+            0 !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+
+        background-size:
+            auto,
+            auto,
+            28px 28px,
+            28px 28px;
+    }
+
+    header {
+
+        height:
+            65px;
+
+        padding:
+            0 18px;
+    }
+
+    .logo {
+        font-size:
+            17px;
+    }
+
+    nav {
+        gap:
+            14px;
+    }
+
+    nav a {
+        font-size:
+            12px;
+    }
+
+    main {
+
+        padding:
+            50px 18px 70px;
+    }
+
+    .hero h1 {
+
+        font-size:
+            45px;
+
+        letter-spacing:
+            -2px;
+    }
+
+    .hero p {
+        font-size:
+            16px;
+    }
+
+    .input-section {
+        margin-top:
+            60px;
+    }
+
+    .input-section h2 {
+        font-size:
+            25px;
+    }
+
+    #truthTablePage,
+    #mintermPage,
+    #booleanExpressionPage,
+    #kmapPage,
+    #binaryAdderPage {
+
+        padding:
+            35px 18px 70px;
+    }
+
+    #truthTablePage > h1,
+    #mintermPage > h1,
+    #booleanExpressionPage > h1,
+    #kmapPage > h1,
+    #binaryAdderPage > h1 {
+
+        font-size:
+            40px;
+    }
+
+    #tableContainer {
+
+        overflow-x:
+            auto;
+
+        align-items:
+            stretch;
+    }
+
+    #tableContainer table {
+
+        min-width:
+            500px;
+    }
+
+    .kmap th,
+    .kmap td {
+
+        width:
+            52px;
+
+        height:
+            52px;
+    }
+
+    .verification-item {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+    }
+
+    .circuit-box {
+        padding:
+            18px;
+    }
+
+    .circuit-diagram {
+        padding:
+            12px;
+    }
+
+    .adder-input-box {
+        padding:
+            22px 15px;
+    }
+
+    .adder-row {
+        gap:
+            7px;
+    }
+
+    .adder-row-label {
+
+        width:
+            45px;
+
+        font-size:
+            17px;
+    }
+
+    .adder-bit {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+        font-size:
+            17px;
+    }
+
+    .adder-circuit-box {
+        padding:
+            15px;
+    }
+}
+
+/* =====================================================
+   BINARY SUBTRACTOR
+   ===================================================== */
+
+#binarySubtractorPage {
+    display: none;
+}
+
+
+/* =====================================================
+   SUBTRACTOR INPUT
+   ===================================================== */
+
+.subtractor-bit {
+    width: 48px;
+    height: 48px;
+
+    margin: 6px;
+
+    border: 2px solid #888;
+    border-radius: 10px;
+
+    background: #222;
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.subtractor-bit:hover {
+    transform: translateY(-2px);
+}
+
+.subtractor-bit.active {
+    background: #7c3aed;
+    border-color: #a78bfa;
+}
+
+
+/* =====================================================
+   SUBTRACTOR CIRCUIT OPTIONS
+   ===================================================== */
+
+.subtractor-circuit-options {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.subtractor-circuit-options button {
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #27272a;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.subtractor-circuit-options button:hover {
+
+    background: #3f3f46;
+
+    transform: translateY(-2px);
+}
+
+.subtractor-circuit-options button.active {
+
+    background: #7c3aed;
+
+    color: white;
+
+    box-shadow:
+        0 0 15px rgba(124, 58, 237, 0.4);
+}
+
+
+/* =====================================================
+   CIRCUIT BOX
+   ===================================================== */
+
+.adder-circuit-box {
+
+    width: 95%;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-sizing: border-box;
+
+    overflow-x: auto;
+}
+
+.adder-circuit-box h2 {
+
+    text-align: center;
+
+    margin-bottom: 8px;
+}
+
+.adder-circuit-box p {
+
+    text-align: center;
+
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   CIRCUIT SVG
+   ===================================================== */
+
+.adder-circuit-diagram {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 15px;
+}
+
+.adder-circuit-svg {
+
+    min-width: 800px;
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   CIRCUIT WIRES
+   ===================================================== */
+
+.adder-wire {
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =====================================================
+   GATE STYLE
+   ===================================================== */
+
+.and-gate,
+.or-gate,
+.not-gate {
+
+    fill: rgba(124, 58, 237, 0.12);
+
+    stroke: #a78bfa;
+
+    stroke-width: 2.5;
+}
+
+.gate-bubble {
+
+    fill: #18181b;
+
+    stroke: #a78bfa;
+
+    stroke-width: 2;
+}
+
+.gate-name {
+
+    fill: currentColor;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-anchor: middle;
+}
+
+
+/* =====================================================
+   CIRCUIT LABELS
+   ===================================================== */
+
+.adder-bit-label {
+
+    fill: currentColor;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.adder-output-label {
+
+    fill: currentColor;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.adder-carry-label {
+
+    fill: currentColor;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.adder-fa {
+
+    fill: rgba(124, 58, 237, 0.1);
+
+    stroke: #a78bfa;
+
+    stroke-width: 2;
+}
+
+.adder-fa-text {
+
+    fill: currentColor;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-anchor: middle;
+}
+
+
+/* =====================================================
+   VERIFICATION TABLE
+   ===================================================== */
+
+#subtractorVerificationContainer {
+
+    width: 95%;
+
+    margin: 40px auto;
+}
+
+#subtractorVerificationContainer
+.expression-truth-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+}
+
+#subtractorVerificationContainer
+.expression-truth-table th {
+
+    padding: 13px;
+
+    background: #27272a;
+
+    color: white;
+
+    font-weight: bold;
+
+    border: 1px solid #3f3f46;
+}
+
+#subtractorVerificationContainer
+.expression-truth-table td {
+
+    padding: 11px;
+
+    text-align: center;
+
+    border: 1px solid #3f3f46;
+}
+
+
+/* =====================================================
+   VERIFICATION STATUS
+   ===================================================== */
+
+.verification-status {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background: rgba(124, 58, 237, 0.1);
+
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.verification-pass {
+
+    font-weight: bold;
+}
+
+.verification-fail {
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   RESULT BOX
+   ===================================================== */
+
+.adder-result-box {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+}
+
+.adder-result-number {
+
+    margin: 20px 0;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+.adder-result-details {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.adder-result-detail {
+
+    min-width: 130px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(124, 58, 237, 0.08);
+}
+
+.adder-result-detail span {
+
+    display: block;
+
+    opacity: 0.7;
+
+    margin-bottom: 5px;
+}
+
+.adder-result-detail strong {
+
+    font-size: 20px;
+}
+
+/* =====================================================
+   SUBTRACTOR CIRCUIT - CLEAR DIAGRAM
+   ===================================================== */
+
+.subtractor-stage-title {
+    fill: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.subtractor-label {
+    fill: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.subtractor-output {
+    fill: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.subtractor-borrow-label {
+    fill: #c4b5fd;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.subtractor-wire {
+    fill: none;
+    stroke: #e9e7ff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.subtractor-block {
+    fill: #181522;
+    stroke: #a78bfa;
+    stroke-width: 3;
+}
+
+.subtractor-block-title {
+    fill: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.subtractor-block-value {
+    fill: #c4b5fd;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Make SVG larger and easier to read */
+
+#subtractorBlockCircuitContainer
+.adder-circuit-svg {
+
+    min-width: 1000px;
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* Prevent clipping */
+
+#subtractorBlockCircuitContainer
+.adder-circuit-diagram {
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 25px 10px 35px;
+
+}
+
+
+/* Better circuit box */
+
+#subtractorBlockCircuitContainer
+.adder-circuit-box {
+
+    background: #0d0b14;
+
+    border: 1px solid #3f3655;
+
+}
+
+/* =====================================================
+   SUBTRACTOR CIRCUIT - FINAL FIX
+   ===================================================== */
+
+.subtractor-circuit-svg {
+    background: #0b0812;
+}
+
+
+/* ALL SVG TEXT */
+
+.subtractor-circuit-svg text {
+    font-family: Arial, sans-serif;
+}
+
+
+/* TITLES */
+
+.subtractor-circuit-svg .subtractor-title {
+    fill: #ffffff !important;
+    font-size: 18px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+
+/* INPUTS */
+
+.subtractor-circuit-svg .subtractor-input {
+    fill: #d8ccff !important;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* OUTPUTS */
+
+.subtractor-circuit-svg .subtractor-output {
+    fill: #bda3ff !important;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* SMALL LABELS */
+
+.subtractor-circuit-svg .subtractor-small-label {
+    fill: #ffffff !important;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* GATE LABELS */
+
+.subtractor-circuit-svg .subtractor-gate-text {
+    fill: #ffffff !important;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* WIRES */
+
+.subtractor-circuit-svg .subtractor-wire {
+    fill: none;
+    stroke: #e9e2ff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* XOR */
+
+.subtractor-circuit-svg .subtractor-xor {
+    fill: rgba(124, 58, 237, 0.12);
+    stroke: #a78bfa;
+    stroke-width: 3;
+}
+
+.subtractor-circuit-svg .subtractor-xor-extra {
+    fill: none;
+    stroke: #a78bfa;
+    stroke-width: 3;
+}
+
+
+/* Make the existing gates clearer */
+
+.subtractor-circuit-svg .nand-gate {
+    fill: #17111f !important;
+    stroke: #a78bfa !important;
+    stroke-width: 3 !important;
+}
+
+.subtractor-circuit-svg .nor-gate {
+    fill: #17111f !important;
+    stroke: #a78bfa !important;
+    stroke-width: 3 !important;
+}
+
+.subtractor-circuit-svg .and-gate,
+.subtractor-circuit-svg .or-gate,
+.subtractor-circuit-svg .not-gate {
+    fill: #17111f !important;
+    stroke: #a78bfa !important;
+    stroke-width: 3 !important;
+}
+
+
+/* Existing gate names */
+
+.subtractor-circuit-svg .gate-name {
+    fill: #ffffff !important;
+}
+
+
+/* Existing bubbles */
+
+.subtractor-circuit-svg .gate-bubble {
+    fill: #17111f !important;
+    stroke: #d8ccff !important;
+}
+
+.subtractor-svg-title {
+    fill: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.subtractor-svg-label {
+    fill: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.subtractor-svg-value {
+    fill: #c4b5fd;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.adder-circuit-options {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.adder-circuit-options button {
+    padding: 12px 22px;
+    border: 1px solid #4b3b63;
+    border-radius: 10px;
+    background: #15111c;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.adder-circuit-options button:hover {
+    border-color: #a78bfa;
+}
+
+.adder-circuit-options button.active {
+    background: #7c3aed;
+    border-color: #a78bfa;
+    color: #ffffff;
+}
+
+/* =========================================================
+   FINAL BEAUTIFUL BUTTON / UI UPGRADE
+   Background remains UNCHANGED
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   ALL BUTTONS - BASE
+   --------------------------------------------------------- */
+
+button {
+    font-family: inherit;
+    font-weight: 650;
+    letter-spacing: 0.1px;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE BUTTONS
+   --------------------------------------------------------- */
+
+.input-options button {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid #44305f;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 23, 52, 0.95),
+            rgba(18, 12, 28, 0.98)
+        );
+
+    color: #f8f4ff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+
+/* Purple shine at top */
+
+.input-options button::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6d28d9,
+            #a78bfa,
+            #c4b5fd
+        );
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Soft glow */
+
+.input-options button::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -60px;
+    bottom: -70px;
+
+    background: rgba(139, 92, 246, 0.10);
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+}
+
+
+.input-options button:hover {
+    transform: translateY(-6px);
+
+    border-color: #8b5cf6;
+
+    background:
+        linear-gradient(
+            145deg,
+            #281a3d,
+            #160d24
+        );
+
+    box-shadow:
+        0 15px 40px rgba(109, 40, 217, 0.28),
+        0 0 0 1px rgba(139, 92, 246, 0.12);
+}
+
+
+.input-options button:hover::before {
+    transform: scaleX(1);
+}
+
+
+.input-options button:hover::after {
+    transform: scale(1.4);
+}
+
+
+
